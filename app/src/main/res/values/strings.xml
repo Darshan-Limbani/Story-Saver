@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">The Socio Hub</string>
+    <string name="title_activity_whats_app_status">WhatsAppStatusActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="txtAboutApp">The Socio Hub allows you to view and download the instagram media like reels,video,posts and many more and WhatsApp Statuses like Photos and Videos  with great UI and Hassle free experience</string>
+    <string name="txtAboutUs">About app</string>
+    <string name="txtAlltheRights">All the rights to @instagram</string>
+    <string name="txtAppVersion">App Version</string>
+    <string name="txtAppVersionCode">1.0</string>
+    <string name="txtBookMark">bookmark</string>
+    <string name="txtCancel">Cancel</string>
+    <string name="txtContactUs">Contact Us</string>
+    <string name="txtDP">DP</string>
+    <string name="txtDeadMadTechnologies">DeadMad Technologies</string>
+    <string name="txtDowngramPro">Inload Pro</string>
+    <string name="txtDownload">Download</string>
+    <string name="txtDownloadPostVideosReelsStories">Reels,Videos,Posts and Stories</string>
+    <string name="txtDownloadStatusDes">Download and share all the instagram media like reels, posts, stories and WhatsApp statuses like Photos and Videos and many more in one tap with all the features in one app</string>
+    <string name="txtmediaDownload">View Media</string>
+    <string name="txtDpDownload">View Profile Picture</string>
+    <string name="txtEnlargedProfile">Enlarged profile picture</string>
+    <string name="txtEnterUsername">Enter Username</string>
+    <string name="txtEtHint">Paste your link here</string>
+    <string name="txtExploreNow">Explore</string>
+    <string name="txtGetStarted">Get Started</string>
+    <string name="txtImages">Photos</string>
+    <string name="txtInloadPro">Inload Pro</string>
+    <string name="txtInstagram">Instagram</string>
+    <string name="txtInstagramDownloader">Media Downloader</string>
+    <string name="txtInstagramDownloader1">Login with your instagram account to access all the features seamlessly</string>
+    <string name="txtInstagramMediaDownloader">Media Downloder</string>
+    <string name="txtLoginWith">Login with</string>
+    <string name="txtLoginnew">Login?</string>
+    <string name="txtLogintx">Login</string>
+    <string name="txtLogout">Logout?</string>
+    <string name="txtName">Name</string>
+    <string name="txtLogin">Login with Instagram</string>
+
+
+    <string name="txtProDes1">Ad free exeperince</string>
+    <string name="txtProDes2">Access to all features</string>
+    <string name="txtProDes3">Regularly updates</string>
+    <string name="txtProDes4">Access to bookmark</string>
+    <string name="txtProDes5">Bug free experience</string>
+    <string name="txtProFeature">Pro Feature :</string>
+    <string name="txtProductBy">Product by</string>
+    <string name="txtProfile">Profile</string>
+    <string name="txtProfilePicture">Profile pictures (DP)</string>
+    <string name="txtclickheretodownload">Click here to download or view profile pictures</string>
+    <string name="txtclickheretodownloadmedia">Click here to download or view Reels, Video, Posts and Stories</string>
+    <string name="txtRate">Rate</string>
+    <string name="txtRateUs">Rate Us</string>
+    <string name="txtSave">Save</string>
+    <string name="txtSettings">Settings</string>
+
+    <string name="txtShare">Share</string>
+    <string name="txtSubscribeNow">Subscribe Now</string>
+    <string name="txtTapandForget">Just Paste &amp; Download</string>
+    <string name="txtUpgradeToPro">Upgrade to Pro</string>
+    <string name="txtVideos">Videos</string>
+    <string name="txtPrivacyPolicy">Privacy Policy</string>
+    <string name="no_internet_connection">No Internet Connection!! \n Please check your Internet Connection.</string>
+    <string name="retry">Retry</string>
+</resources>

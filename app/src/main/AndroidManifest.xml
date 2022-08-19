@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.saver.storysaver">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.saver.storysaver.MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StatusSaver"
+        android:usesCleartextTraffic="true"
+        android:vmSafeMode="true"
+        tools:targetApi="31">
+        <activity
+            android:name="com.saver.storysaver.setting.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.setting.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.ListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.splash.ExploreActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.splash.GettingStartedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.instagram.IgLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.view.ViewVideoActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.saver.storysaver.view.ViewImageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.saver.storysaver.whatsapp.WhatsAppStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.saver.storysaver.splash.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.saver.storysaver.instagram.IgLink"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
