@@ -22,7 +22,7 @@ public class SettingActivity extends AppCompatActivity {
     ConstraintLayout btnAbout;
     ImageView btnBack;
 
-    String PRIVACY_URL = "https://www.google.com";
+    String PRIVACY_URL = "https://sites.google.com/view/crazyappsdev";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
