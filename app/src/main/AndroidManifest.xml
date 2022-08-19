@@ -64,7 +64,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.saver.storysaver.instagram.IgLink"
+            android:name="com.saver.storysaver.instagram.IgLinkActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

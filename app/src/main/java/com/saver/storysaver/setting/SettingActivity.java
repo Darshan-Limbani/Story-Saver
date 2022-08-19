@@ -60,7 +60,7 @@ public class SettingActivity extends AppCompatActivity {
 
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)     {
+            public void onClick(View v) {
                 share();
             }
         });
@@ -92,8 +92,10 @@ public class SettingActivity extends AppCompatActivity {
         Intent intent = new Intent("android.intent.action.SEND");
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name);
-//        String share = ("https://play.google.com/store/apps/details?id=" + getPackageName());
-        String share = ("market://details??id=" + getPackageName());
+
+        String share = ("https://app.mi.com/details?id=" + getPackageName());
+//
+//        String share = ("market://details??id=" + getPackageName());
         intent.putExtra(Intent.EXTRA_TEXT, "Hey, Here I am using the best Social Media Downloading Application." +
                 "\n\n--------------------------------------\n\n " + share);
         startActivity(Intent.createChooser(intent, "Share via : "));

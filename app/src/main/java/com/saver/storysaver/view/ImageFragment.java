@@ -23,14 +23,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.saver.storysaver.instagram.IgLink;
+import com.saver.storysaver.instagram.IgLinkActivity;
 import com.saver.storysaver.R;
 import com.saver.storysaver.utils.Util;
 import com.saver.storysaver.whatsapp.adapter.ImageAdapter;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 
 public class ImageFragment extends Fragment {
@@ -153,46 +156,74 @@ public class ImageFragment extends Fragment {
         }
 
     }
-
     private void downloadWhatsappImage(DocumentFile srcFile) {
 
-        ContentResolver resolver = getContext().getContentResolver();
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DISPLAY_NAME, srcFile.getName());
-        values.put(MediaStore.MediaColumns.MIME_TYPE, srcFile.getType());
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            try {
+                FileInputStream inStream = new FileInputStream(srcFile.getUri().getPath());
 
-//        if (Build.VERSION.SDK_INT >=)
+                String dst = Environment.getExternalStorageDirectory() + "/" + Environment.DIRECTORY_DOWNLOADS
+                        + File.separator + getContext().getString(R.string.app_name)
+                        + File.separator + "WhatsApp"
+                        + File.separator + "Images"
+                        + File.separator + srcFile.getName();
+                FileOutputStream outStream = new FileOutputStream(dst);
+                FileChannel inChannel = inStream.getChannel();
+                FileChannel outChannel = outStream.getChannel();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//            values.put(MediaStore.MediaColumns.RELATIVE_PATH, Util.IMG_FOLDER);
+                inChannel.transferTo(0, inChannel.size(), outChannel);
+                inStream.close();
+                outStream.close();
+            } catch (Exception e) {
+
+                Log.d("ERROR_DOWNLOAD", " -------- ERROR  in download--------" + e);
+
+                e.printStackTrace();
+            }
+
+        } else {
+
+            ContentResolver resolver = getContext().getContentResolver();
+            ContentValues values = new ContentValues();
+            values.put(MediaStore.MediaColumns.MIME_TYPE, srcFile.getType());
+
+
+            //            values.put(MediaStore.MediaColumns.RELATIVE_PATH, Util.IMG_FOLDER);
             values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS
                     + File.separator + getContext().getString(R.string.app_name)
                     + File.separator + "WhatsApp"
                     + File.separator + "Images");
-        }
-        Uri uri = resolver.insert(MediaStore.Files.getContentUri("external"), values);
 
-        try {
-            InputStream in = resolver.openInputStream(srcFile.getUri());
 
-            OutputStream out = resolver.openOutputStream(uri);
+            Uri target;//= resolver.insert(MediaStore.Files.getContentUri("external"), values);
+            target = MediaStore.Downloads.EXTERNAL_CONTENT_URI;
 
-            byte[] buf = new byte[1024];
-            int len;
 
-            while ((len = in.read(buf)) > 0) {
-                Log.d("WA_LOG", "============= While Calles =============");
+            Uri uri = resolver.insert(target, values);
 
-                out.write(buf, 0, len);
-            }
-            in.close();
-            out.close();
+            try {
+                InputStream in = resolver.openInputStream(srcFile.getUri());
 
-        } catch (Exception e) {
+                OutputStream out = resolver.openOutputStream(uri);
+
+                byte[] buf = new byte[1024];
+                int len;
+
+                while ((len = in.read(buf)) > 0) {
+                    Log.d("WA_LOG", "============= While Calles =============");
+
+                    out.write(buf, 0, len);
+                }
+                in.close();
+                out.close();
+
+            } catch (Exception e) {
 //            Toast.makeText(getContext(), "Something went wrong!!", Toast.LENGTH_SHORT).show();
-            isError = true;
-            e.printStackTrace();
+                isError = true;
+                e.printStackTrace();
+            }
         }
+
 
     }
 
@@ -264,7 +295,7 @@ public class ImageFragment extends Fragment {
             Log.d("URI_LOG", "---------- VERSION >= Q ----------" + uri.listFiles().length);
 
         } else {
-            uri = DocumentFile.fromFile(IgLink.file);
+            uri = DocumentFile.fromFile(IgLinkActivity.file);
             Log.d("URI_LOG", "---------- VERSION <Q ----------" + uri.listFiles().length);
         }
 

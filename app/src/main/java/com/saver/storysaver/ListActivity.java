@@ -18,7 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.saver.storysaver.instagram.IgLink;
+import com.saver.storysaver.instagram.IgLinkActivity;
 import com.saver.storysaver.setting.SettingActivity;
 import com.saver.storysaver.splash.ExploreActivity;
 import com.saver.storysaver.utils.Util;
@@ -59,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
                     if (!Util.IsLogin()) {
                         startActivity(new Intent(ListActivity.this, ExploreActivity.class));
                     } else {
-                        startActivity(new Intent(ListActivity.this, IgLink.class));
+                        startActivity(new Intent(ListActivity.this, IgLinkActivity.class));
                     }
                 }
             }

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import com.saver.storysaver.R;
-import com.saver.storysaver.instagram.IgLink;
+import com.saver.storysaver.instagram.IgLinkActivity;
 import com.saver.storysaver.instagram.IgLoginActivity;
 import com.saver.storysaver.view.ViewImageActivity;
 import com.saver.storysaver.view.ViewVideoActivity;
@@ -72,7 +72,7 @@ public class IGUtils {
         this.url = url;
 //        USER_NAME = url;
 
-        IS_DP = IgLink.isDp;
+        IS_DP = IgLinkActivity.isDp;
 
         showLoadingDialog();
         validateUrl();

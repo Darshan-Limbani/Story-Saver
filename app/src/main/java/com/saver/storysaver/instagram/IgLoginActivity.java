@@ -97,7 +97,7 @@ public class IgLoginActivity extends AppCompatActivity {
                 editor.putBoolean(Util.IS_LOGIN, true);
                 editor.apply();
                 Toast.makeText(IgLoginActivity.this, "Login Sucessfully!!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(IgLoginActivity.this, IgLink.class));
+                startActivity(new Intent(IgLoginActivity.this, IgLinkActivity.class));
                 finish();
             }
 

@@ -23,7 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.saver.storysaver.instagram.IgLink;
+import com.saver.storysaver.instagram.IgLinkActivity;
 import com.saver.storysaver.R;
 import com.saver.storysaver.utils.Util;
 import com.saver.storysaver.whatsapp.adapter.VideoAdapter;
@@ -140,7 +140,7 @@ public class VideoFragment extends Fragment {
             Log.d("URI_LOG", "---------- VERSION >= Q ----------" + uri.listFiles().length);
 
         } else {
-            uri = DocumentFile.fromFile(IgLink.file);
+            uri = DocumentFile.fromFile(IgLinkActivity.file);
             Log.d("", "---------- VERSION <Q ----------" + uri.listFiles().length);
         }
 

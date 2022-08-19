@@ -25,12 +25,12 @@ import com.saver.storysaver.utils.Util;
 
 import java.io.File;
 
-public class IgLink extends AppCompatActivity {
+public class IgLinkActivity extends AppCompatActivity {
 
     public static Uri uri;
     public static File file;
     public static Boolean isDp;
-    public static IgLink instance;
+    public static IgLinkActivity instance;
     //    ImageView btnWhatsapp;
     String startDir, secondDir, finalDirPath;
     SharedPreferences preferences;
@@ -50,9 +50,9 @@ public class IgLink extends AppCompatActivity {
 
         initView();
 
-        instance = IgLink.this;
+        instance = IgLinkActivity.this;
 
-        Util.requestPermission(IgLink.this);
+        Util.requestPermission(IgLinkActivity.this);
 
 /*        btnWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,14 +71,14 @@ public class IgLink extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(IgLink.this, SettingActivity.class));
+                startActivity(new Intent(IgLinkActivity.this, SettingActivity.class));
             }
         });
         btnDpDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (!Util.isNetworkAvailable(IgLink.this)) {
+                if (!Util.isNetworkAvailable(IgLinkActivity.this)) {
                     showInternetDialog();
                     return;
                 }
@@ -86,7 +86,7 @@ public class IgLink extends AppCompatActivity {
                 if (etProfile.getText().toString().trim().isEmpty()) {
 
                     etProfile.setError("Username Required!");
-                    Toast.makeText(IgLink.this, "Please Enter Username!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IgLinkActivity.this, "Please Enter Username!!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 //                new IGUtils(MainActivity.this,etLink.getText().toString().trim());
@@ -101,14 +101,14 @@ public class IgLink extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!Util.isNetworkAvailable(IgLink.this)) {
+                if (!Util.isNetworkAvailable(IgLinkActivity.this)) {
                     showInternetDialog();
                     return;
                 }
 
                 if (etLink.getText().toString().trim().isEmpty()) {
                     etLink.setError("Link Required!");
-                    Toast.makeText(IgLink.this, "Please paste a Link First!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IgLinkActivity.this, "Please paste a Link First!!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 //                new IGUtils(MainActivity.this,etLink.getText().toString().trim());
@@ -121,7 +121,7 @@ public class IgLink extends AppCompatActivity {
 
     private void showInternetDialog() {
 
-        Dialog dialog = new Dialog(IgLink.this);
+        Dialog dialog = new Dialog(IgLinkActivity.this);
         dialog.requestWindowFeature(1);
         dialog.setContentView(R.layout.no_internet_dialog);
 
@@ -132,7 +132,7 @@ public class IgLink extends AppCompatActivity {
         btnretry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!Util.isNetworkAvailable(IgLink.this)) {
+                if (!Util.isNetworkAvailable(IgLinkActivity.this)) {
                     dialog.dismiss();
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -174,10 +174,10 @@ public class IgLink extends AppCompatActivity {
 
             if (isDp) {
                 Log.d("INSTA_LOG", "------ FINAL POST URL ------ doInBackGround()  called" + etProfile.getText().toString().trim());
-                new IGUtils(IgLink.this, etProfile.getText().toString().trim());
+                new IGUtils(IgLinkActivity.this, etProfile.getText().toString().trim());
 
             } else {
-                new IGUtils(IgLink.this, etLink.getText().toString().trim());
+                new IGUtils(IgLinkActivity.this, etLink.getText().toString().trim());
             }
 
             return "";

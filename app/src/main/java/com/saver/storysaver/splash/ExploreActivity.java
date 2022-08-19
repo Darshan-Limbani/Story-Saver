@@ -6,18 +6,18 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.saver.storysaver.instagram.IgLink;
-import com.saver.storysaver.instagram.IgLoginActivity;
 import com.saver.storysaver.R;
+import com.saver.storysaver.instagram.IgLinkActivity;
+import com.saver.storysaver.instagram.IgLoginActivity;
 import com.saver.storysaver.utils.Util;
 
-public class ExploreActivity extends AppCompatActivity {
+public class ExploreActivity extends AppCompatActivity  {
 
 
     ConstraintLayout btnExplore;
@@ -33,8 +33,8 @@ public class ExploreActivity extends AppCompatActivity {
         btnExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(ExploreActivity.this, IgLinkActivity.class));
 
-                startActivity(new Intent(ExploreActivity.this, IgLink.class));
 
             }
         });
@@ -65,7 +65,7 @@ public class ExploreActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.no_internet_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         dialog.setCancelable(false);
-        Button btnretry = dialog.findViewById(R.id.btnretry);
+        LinearLayout btnretry = dialog.findViewById(R.id.btnretry);
 
         btnretry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,4 +97,5 @@ public class ExploreActivity extends AppCompatActivity {
 
 
     }
+
 }

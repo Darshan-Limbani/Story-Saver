@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Socio Hub</string>
+    <string name="app_name">Story Saver</string>
     <string name="title_activity_whats_app_status">WhatsAppStatusActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

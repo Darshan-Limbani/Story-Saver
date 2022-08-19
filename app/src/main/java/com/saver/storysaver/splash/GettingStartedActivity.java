@@ -1,6 +1,7 @@
 package com.saver.storysaver.splash;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -21,14 +22,22 @@ public class GettingStartedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getting_started);
 
+
+//        AdManager.loadGoogleInterstitialAds(GettingStartedActivity.this);
+
         btnStart = findViewById(R.id.btnStart);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
                 if (Util.requestPermission(GettingStartedActivity.this)) {
                     Util.createAppFolder();
+                    SharedPreferences preferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean(Util.IS_PERMISSION, true);
+                    editor.apply();
 
                     startActivity(new Intent(GettingStartedActivity.this, ListActivity.class));
 
@@ -36,7 +45,9 @@ public class GettingStartedActivity extends AppCompatActivity {
                     editor.putBoolean("IS_FILE_PERMISSION", true);
                     editor.apply();
                     startActivity(new Intent(GettingStartedActivity.this, ExploreActivity.class));
-*/                }
+*/
+
+                }
             }
         });
     }
