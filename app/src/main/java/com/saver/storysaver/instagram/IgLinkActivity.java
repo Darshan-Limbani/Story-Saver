@@ -25,7 +25,7 @@ import com.saver.storysaver.utils.Util;
 
 import java.io.File;
 
-public class IgLinkActivity extends AppCompatActivity {
+public class IgLinkActivity extends AppCompatActivity  {
 
     public static Uri uri;
     public static File file;
