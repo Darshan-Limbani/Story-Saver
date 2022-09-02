@@ -197,7 +197,6 @@ public class IGUtils {
             HttpsURLConnection conn = (HttpsURLConnection) urlConn;
             conn.setRequestMethod(GET);
             conn.setConnectTimeout(20000);
-//            conn.setRequestProperty("Accept-Encoding", "gzip, deflate, br");
             conn.setRequestProperty("User-Agent", USER_AGENT);
 //            conn.setRequestProperty("Accept", "*/*");
             conn.setRequestProperty("Cookie", "ds_user_id=\"" + Util.getUserId().trim() + "\";sessionid=\" " + Util.getSessionId().trim() + "\";");
