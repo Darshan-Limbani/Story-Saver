@@ -201,8 +201,6 @@ public class IGUtils {
             conn.setRequestProperty("User-Agent", USER_AGENT);
 //            conn.setRequestProperty("Accept", "*/*");
             conn.setRequestProperty("Cookie", "ds_user_id=\"" + Util.getUserId().trim() + "\";sessionid=\" " + Util.getSessionId().trim() + "\";");
-
-//            conn.setRequestProperty("Cookie", "ds_user_id=\"48566271418\";sessionid=\"48566271418%3AHiv2n6wBOuCQdA%3A10\";csrftoken=\"gBwcGi2REgHZVTvjN8X1WY7fTtPsrk08\"");
             conn.setRequestProperty("Referer", IG_MAIN);
             conn.setRequestProperty("Connection", "keep-alive");
             conn.setRequestProperty("authority", "i.instagram.com/");
